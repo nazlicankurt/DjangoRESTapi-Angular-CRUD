@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-md-10">
+  <div class="row" style="margin-left:200px">
+    <img [src]="card.image" class="img-responsive img-circle" style="max-height: 100px;">
+    <div class="row">
+    <p class="text-uppercase text-primary"style="margin-top: 10px;margin-left: 30px">{{card.name}} {{card.surname}}({{card.age}})</p>
+    <p class="text-info " style="color: cornflowerblue;margin-left: 70px">{{card.nation}}</p>
+    </div>
+    </div>
+    <hr>
+    <div class="row mat-toolbar-single-rows">
+      <label class="col-xs-8">Wimbledon Wins</label>
+    <p>{{card.WimbledonWins}}</p>
+    </div>
+    <div class="row">
+      <label class="col-xs-8">Usa Open Wins</label>
+      <p>{{card.UsaOpenWins}}</p>
+    </div>
+    <div class="row">
+      <label class="col-xs-8">French Open Wins</label>
+      <p>{{card.FrenchOpenWins}}</p>
+    </div>
+  </div>
+</div>
+
+

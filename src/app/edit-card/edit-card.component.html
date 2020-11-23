@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()" >
+        <img [src]="defaultImage" class="img-responsive img-thumbnail" style="max-height: 100px; horiz-align:center;vertical-align: center">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="form-control">
+          <span class="help-block"
+          *ngIf="editForm.get('name').touched && !editForm.get('name').dirty && htmlIsNew">Name is Required</span>
+          <span class="help-block"
+                *ngIf="!htmlIsNew && editForm.get('name').invalid">Name is Required</span>
+          <label for="surname">Surname</label>
+          <input
+            type="text"
+            id="surname"
+            formControlName="surname"
+            class="form-control">
+          <span class="help-block"
+                *ngIf="editForm.get('surname').touched && !editForm.get('surname').dirty && htmlIsNew ">Surname is Required</span>
+          <span class="help-block"
+          *ngIf="!htmlIsNew && editForm.get('surname').invalid">Surname is Required</span>
+        </div>
+        <div class="form-group">
+          <label for="nation">Nation</label>
+          <input
+            type="text"
+            id="nation"
+            formControlName="nation"
+            class="form-control">
+          <span class="help-block"
+                *ngIf="editForm.get('nation').touched && !editForm.get('nation').dirty && htmlIsNew ">Nation is Required</span>
+          <span class="help-block"
+                *ngIf="!htmlIsNew && editForm.get('nation').invalid">Nation is Required</span>
+          <label for="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            formControlName="age"
+            min="0"
+            class="form-control">
+          <span class="help-block"
+                *ngIf="editForm.get('age').touched && !editForm.get('age').dirty && htmlIsNew">Age is Required</span>
+          <span class="help-block"
+                *ngIf="!htmlIsNew && editForm.get('age').invalid">Age is Required</span>
+          <label for="profileImage">Profile Image Url</label>
+          <input
+            type="text"
+            id="profileImage"
+            formControlName="profileImage"
+            class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="wimbledon">Wimbledon Winnings</label>
+          <input
+            type="number"
+            id="wimbledon"
+            min="0"
+            formControlName="wimbledon"
+            class="form-control">
+          <label for="usa">Usa Open Winnings</label>
+          <input
+            type="number"
+            id="usa"
+            min="0"
+            formControlName="usa"
+            class="form-control">
+          <label for="french">French Open Winnings</label>
+          <input
+            type="number"
+            id="french"
+            min="0"
+            formControlName="french"
+            class="form-control col-md-2">
+        </div>
+        <button class="btn btn-primary" type="submit" *ngIf="htmlIsNew"
+          [disabled]="!buttonActive" > Submit</button>
+        <button class="btn btn-primary"   [disabled]="!buttonActive" type="submit" *ngIf="!htmlIsNew"> Update</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
